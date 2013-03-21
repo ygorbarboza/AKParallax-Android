@@ -5,6 +5,8 @@ AKParallax-Android  is a Library Project that provide a parallax effect to a ima
 
 ## Usage
 
+* Import the app folder as a Android project. The .project included will cause it to have the name `Parallax`.
+
 ### In your activity xml
 
 ``` xml
