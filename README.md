@@ -5,6 +5,40 @@ AKParallax-Android  is a Library Project that provide a parallax effect to a ima
 
 ## Usage
 
+### In your activity xml
+
+``` xml
+
+  <net.appkraft.parallax.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent" android:overScrollMode="never"
+    android:layout_height="match_parent" > 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1000dp"
+        tools:context=".MainActivity" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/teste" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView1"
+            android:text="@string/hello_world" />
+
+    </RelativeLayout>
+
+</net.appkraft.parallax.ParallaxScrollView>
+
+```
+
 ### In your code
 
 Setting the imageView that will do the parallax effect:
