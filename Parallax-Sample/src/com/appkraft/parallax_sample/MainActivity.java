@@ -1,7 +1,11 @@
-package net.appkraft.parallax;
+package com.appkraft.parallax_sample;
 
-import android.app.Activity;
+import net.appkraft.parallax.ParallaxScrollView;
+
+import com.example.parallax_sample.R;
+
 import android.os.Bundle;
+import android.app.Activity;
 import android.view.Menu;
 import android.widget.ImageView;
 
