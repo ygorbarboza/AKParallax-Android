@@ -1,7 +1,7 @@
-Parallax_android
+AKParallax-Android 
 ================
 
-Parallax_android is a Library Project that provide a parallax effect to a imageView in a ParallaxScrollView.
+AKParallax-Android  is a Library Project that provide a parallax effect to a imageView in a ParallaxScrollView.
 
 ## Usage
 
