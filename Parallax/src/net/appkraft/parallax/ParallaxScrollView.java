@@ -33,16 +33,18 @@ public class ParallaxScrollView extends ScrollView {
 	protected boolean overScrollBy(int deltaX, int deltaY, int scrollX,
 			int scrollY, int scrollRangeX, int scrollRangeY,
 			int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
+		
+		boolean isCollapseAnimation = false;
 
 		for (int i = 0; i < mOnOverScrollByList.size(); i++) {
 
-			mOnOverScrollByList.get(i).overScrollBy(deltaX, deltaY, scrollX,
+			isCollapseAnimation = mOnOverScrollByList.get(i).overScrollBy(deltaX, deltaY, scrollX,
 					scrollY, scrollRangeX, scrollRangeY, maxOverScrollX,
-					maxOverScrollY, isTouchEvent);
+					maxOverScrollY, isTouchEvent) || isCollapseAnimation;
 
 		}
 
-		return super.overScrollBy(deltaX, deltaY, scrollX, scrollY,
+		return isCollapseAnimation ? true : super.overScrollBy(deltaX, deltaY, scrollX, scrollY,
 				scrollRangeX, scrollRangeY, maxOverScrollX, maxOverScrollY,
 				isTouchEvent);
 
@@ -60,12 +62,12 @@ public class ParallaxScrollView extends ScrollView {
 		return super.onTouchEvent(ev);
 
 	}
-	
+
 	/**
-	 * Set the ImageView that will be used in the parallax.          	
-	 *
-	 * @param
-     * iv ImageView - ImageView to be used in parallax.        
+	 * Set the ImageView that will be used in the parallax.
+	 * 
+	 * @param iv
+	 *            ImageView - ImageView to be used in parallax.
 	 * 
 	 */
 
@@ -82,7 +84,7 @@ public class ParallaxScrollView extends ScrollView {
 
 	private interface onOverScrollByListener {
 
-		public void overScrollBy(int deltaX, int deltaY, int scrollX,
+		public boolean overScrollBy(int deltaX, int deltaY, int scrollX,
 				int scrollY, int scrollRangeX, int scrollRangeY,
 				int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent);
 
@@ -109,7 +111,7 @@ public class ParallaxScrollView extends ScrollView {
 	private onOverScrollByListener onScroll = new onOverScrollByListener() {
 
 		@Override
-		public void overScrollBy(int deltaX, int deltaY, int scrollX,
+		public boolean overScrollBy(int deltaX, int deltaY, int scrollX,
 				int scrollY, int scrollRangeX, int scrollRangeY,
 				int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
 
@@ -137,21 +139,17 @@ public class ParallaxScrollView extends ScrollView {
 								.getHeight() - deltaY
 								: mImageViewHeight;
 
-						ParallaxScrollView.this.post(new Runnable() {
-							@Override
-							public void run() {
+						mImageView.requestLayout();
 
-								mImageView.requestLayout();
-								ParallaxScrollView.this.scrollTo(0, 0);
-
-							}
-						});
+						return true;
 
 					}
 
 				}
 
 			}
+
+			return false;
 
 		}
 	};
@@ -174,16 +172,18 @@ public class ParallaxScrollView extends ScrollView {
 
 		}
 	};
-	
+
 	/**
-	 * Set the bounds of the views and set the zoom of the view.          	
+	 * Set the bounds of the views and set the zoom of the view.
 	 * <p>
-	 * Necessary to get the size of the Views.	
+	 * Necessary to get the size of the Views.
 	 * <p>
-	 * Have to put in the {@link #onWindowFocusChanged(boolean)} of the activity. 
-	 *
-	 * @param
-     * zoomRatio Double - How many times is the max zoom of the image, minimum 1.        
+	 * Have to put in the {@link #onWindowFocusChanged(boolean)} of the
+	 * activity.
+	 * 
+	 * @param zoomRatio
+	 *            Double - How many times is the max zoom of the image, minimum
+	 *            1.
 	 * 
 	 */
 
@@ -193,12 +193,13 @@ public class ParallaxScrollView extends ScrollView {
 
 			mImageViewHeight = mImageView.getHeight();
 
-			double imageRatio = ((double) mImageView.getDrawable().getIntrinsicWidth())
-					/ ((double) mImageView.getWidth());
+			double imageRatio = ((double) mImageView.getDrawable()
+					.getIntrinsicWidth()) / ((double) mImageView.getWidth());
 
 			mDrawableMaxHeight = (int) ((mImageView.getDrawable()
-					.getIntrinsicHeight() / imageRatio) * (zoomRatio > 1 ? zoomRatio : 1));
-			
+					.getIntrinsicHeight() / imageRatio) * (zoomRatio > 1 ? zoomRatio
+					: 1));
+
 			System.out.println(mDrawableMaxHeight);
 
 		}
