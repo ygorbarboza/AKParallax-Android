@@ -1,11 +1,11 @@
 AKParallax-Android 
 ================
 
-AKParallax-Android  is a Library Project that provide a parallax effect to a imageView in a ParallaxScrollView.
+AKParallax-Android  is a Library Project that provides a parallax effect to an imageView in a ParallaxScrollView.
 
 ## Usage
 
-* Import the app folder as a Android project. The .project included will cause it to have the name `Parallax`.
+* Import the app folder as an Android project. The .project included will cause it to have the name `Parallax`.
 
 ### In your activity xml
 
@@ -52,7 +52,7 @@ Setting the imageView that will do the parallax effect:
 
 	}
 ```
-Setting zoom ratio of the parallax and getting the sizes of the view:
+Setting zoom ratio of the parallax and getting view sizes:
 
 ``` java
   @Override
