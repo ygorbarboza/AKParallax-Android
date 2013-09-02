@@ -47,6 +47,8 @@ Setting the imageView that will do the parallax effect:
 
 ``` java
   protected void onCreate(Bundle savedInstanceState) {
+  
+  		parallax = (ParallaxScrollView) findViewById(R.id.scrollView1);
 
 		parallax.setImageViewToParallax(imageView);
 
