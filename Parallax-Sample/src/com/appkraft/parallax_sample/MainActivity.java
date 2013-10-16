@@ -33,13 +33,4 @@ public class MainActivity extends Activity {
 
 	}
 
-	@Override
-	public void onWindowFocusChanged(boolean hasFocus) {
-
-		super.onWindowFocusChanged(hasFocus);
-
-		parallax.setViewsBounds(parallax.NO_ZOOM);
-
-	}
-
 }
