@@ -13,28 +13,57 @@ AKParallax-Android  is a Library Project that provides a parallax effect to an i
 
   <net.appkraft.parallax.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.appkraft.parallax_sample"
     android:id="@+id/scrollView1"
-    android:layout_width="match_parent" android:overScrollMode="never"
-    android:layout_height="match_parent" > 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    app:zoomRatio="1.4" >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="1000dp"
         tools:context=".MainActivity" >
 
-        <ImageView
-            android:id="@+id/imageView1"
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/teste" />
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/teste" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:text="Bottom"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Top"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/imageView1"
+            android:layout_below="@+id/relativeLayout1"
             android:text="@string/hello_world" />
-
     </RelativeLayout>
 
 </net.appkraft.parallax.ParallaxScrollView>
@@ -52,15 +81,13 @@ Setting the imageView that will do the parallax effect:
 
 	}
 ```
-Setting zoom ratio of the parallax and getting view sizes:
+Setting zoom ratio of the parallax :
 
 ``` java
-  @Override
-	public void onWindowFocusChanged(boolean hasFocus) {
+  protected void onCreate(Bundle savedInstanceState) {
 
-		super.onWindowFocusChanged(hasFocus);
-
-		parallax.setViewsBounds(parallax.NO_ZOOM);
+		parallax.setImageViewToParallax(imageView);
+		parallax.setViewsBounds(1.3);
 
 	}
 ```
