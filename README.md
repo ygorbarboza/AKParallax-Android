@@ -1,13 +1,15 @@
 AKParallax-Android 
 ================
 
-AKParallax-Android  is a Library Project that provides a parallax effect to an imageView in a ParallaxScrollView.
+AKParallax-Android  is a Library Project that provides a parallax effect to an imageView in a ScrollView or a ListView.
 
 ## Usage
 
 * Import the app folder as an Android project. The .project included will cause it to have the name `Parallax`.
 
-### In your activity xml
+### ScrollView
+
+#### In your activity xml
 
 ``` xml
 
@@ -70,7 +72,7 @@ AKParallax-Android  is a Library Project that provides a parallax effect to an i
 
 ```
 
-### In your code
+#### In your code
 
 Setting the imageView that will do the parallax effect:
 
@@ -91,3 +93,55 @@ Setting zoom ratio of the parallax :
 
 	}
 ```
+
+### ListView
+
+#### In your activity xml
+
+``` xml
+
+  <net.appkraft.parallax.ParallaxListView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res/com.appkraft.parallax_sample"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    app:zoomRatio="1.4" >
+
+</net.appkraft.parallax.ParallaxListView>
+
+```
+
+#### In your code
+
+Setting the imageView that will do the parallax effect:
+
+``` java
+  protected void onCreate(Bundle savedInstanceState) {
+
+		...
+		
+		image = new ImageView(this);
+        	image.setImageResource(R.drawable.teste);
+        	AbsListView.LayoutParams params = new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200);
+        	image.setLayoutParams(params);
+
+        	parallax.addHeaderView(image);
+        	parallax.setImageViewToParallax(image);
+
+	}
+```
+Setting zoom ratio of the parallax :
+
+``` java
+  protected void onCreate(Bundle savedInstanceState) {
+  
+  		...
+  
+		parallax.setViewsBounds(1.3);
+
+	}
+```
+
