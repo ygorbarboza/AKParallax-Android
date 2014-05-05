@@ -5,12 +5,15 @@
 # files for the dex VM
 *.dex
 
+.DS_Store
+
 # Java class files
 *.class
 
 # generated files
 bin/
 gen/
+build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -18,3 +21,16 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+# Android Studio
+.idea/
+.gradle
+/*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.iml
+*.iws
+*.ipr
+*~
+*.swp

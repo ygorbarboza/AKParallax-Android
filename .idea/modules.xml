@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AKParallax-Android.iml" filepath="$PROJECT_DIR$/AKParallax-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Parallax/Parallax.iml" filepath="$PROJECT_DIR$/Parallax/Parallax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Parallax-Sample/Parallax-Sample.iml" filepath="$PROJECT_DIR$/Parallax-Sample/Parallax-Sample.iml" />
+    </modules>
+  </component>
+</project>
+

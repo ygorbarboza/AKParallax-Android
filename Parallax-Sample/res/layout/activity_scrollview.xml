@@ -1,22 +1,22 @@
 <net.appkraft.parallax.ParallaxScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res/com.example.parallax_sample"
     android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:overScrollMode="never"
-    app:zoomRatio="1.4" >
+    app:zoomRatio="1.4">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="1000dp"
-        tools:context=".MainActivity" >
+        tools:context=".MainActivity">
 
         <RelativeLayout
             android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".MainActivity" >
+            tools:context=".MainActivity">
 
             <ImageView
                 android:id="@+id/imageView1"
