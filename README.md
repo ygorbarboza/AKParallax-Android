@@ -104,7 +104,7 @@ Setting zoom ratio of the parallax :
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res/com.appkraft.parallax_sample"
-    android:id="@+id/scrollView1"
+    android:id="@+id/listView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:overScrollMode="never"
