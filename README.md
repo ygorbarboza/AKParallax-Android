@@ -3,6 +3,15 @@ AKParallax-Android
 
 AKParallax-Android  is a Library Project that provides a parallax effect to an imageView in a ScrollView or a ListView.
 
+## Sample
+
+The sample application (the source is in the repository) has been published onto Google Play for easy access:
+
+<a href="https://play.google.com/store/apps/details?id=com.appkraft.parallax_sample">
+	<img alt="Android app on Google Play"
+        src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
+ </a>
+ 
 ## Usage
 
 * Import the app folder as an Android project. The .project included will cause it to have the name `Parallax`.
