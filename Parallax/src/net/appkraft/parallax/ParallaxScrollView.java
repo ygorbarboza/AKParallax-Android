@@ -204,7 +204,7 @@ public class ParallaxScrollView extends ScrollView {
 
 	public void setViewsBounds(double zoomRatio) {
 
-		if (mImageViewHeight == -1) {
+		if (mImageViewHeight == -1 && mImageView != null) {
 
 			mImageViewHeight = mImageView.getHeight();
 
